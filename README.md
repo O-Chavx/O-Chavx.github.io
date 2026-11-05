@@ -1,40 +1,22 @@
-# O-Chavx.github.io
+# Oscar Andrés Chávez Inocente · Portafolio
 
-Mi portafolio personal: https://o-chavx.github.io
+**Sitio:** https://o-chavx.github.io
 
-Es un solo `index.html` (estilo Jon Barron): HTML y CSS puros, sin Jekyll ni dependencias.
+Bachiller en Economía por la PUCP y estudiante de la Diplomatura en Ciencia de Datos para las Ciencias Sociales y la Gestión Pública (PUCP). Analizo datos públicos del Perú con Python.
 
-## Estructura
+## Proyectos
 
-| Ruta | Qué es |
-|---|---|
-| `index.html` | Todo el sitio: inicio, proyectos, video y herramientas |
-| `images/` | Figuras de cada proyecto (JPG livianos) y `foto.jpg` (la pones tú) |
-| `files/cv.pdf` | El CV |
-| `.nojekyll` | Le dice a GitHub Pages que publique los archivos tal cual |
+| Proyecto | Resultado | Links |
+|---|---|---|
+| Minería y pobreza en los 1,873 distritos del Perú | Los distritos con minas son 7.8 puntos menos pobres, pero solo 4.4 dentro del mismo departamento | [Dashboard](https://o-chavx.github.io/Tarea_3/web/) · [Código](https://github.com/O-Chavx/Tarea_3) |
+| Skills de Claude Code para la ENAHO 2024 | 27.6 % de pobreza, igual que el INEI, con 108,664 residentes | [Código](https://github.com/O-Chavx/Clean_ENAHO) |
+| Voces y documentos peruanos | Whisper transcribe con 17 % de error de palabras; Gemini llenó bien 17 de 20 fichas | [Demo](https://voces-documentos.streamlit.app/) · [Código](https://github.com/O-Chavx/Voces_documentos_peruanos) |
+| El incendio de Huanoquite | 442 ha quemadas, 93 % pastizal, 1,726 personas a menos de 5 km | [Código](https://github.com/O-Chavx/incendio) |
 
-## Lo que falta poner
+## Contacto
 
-1. `images/foto.jpg`: una foto cuadrada, de unos 400 × 400 px. Mientras no esté, se ven las iniciales.
-2. `files/cv.pdf`: el CV. El botón «CV en PDF» se muestra solo cuando el archivo existe.
-3. En `index.html`, al final, el bloque `PERFIL`: el link de LinkedIn y el correo. Vacíos no se muestran.
+[LinkedIn](https://www.linkedin.com/in/oscar-ch%C3%A1vez-inocente-98373b23b/) · oscar.ac23502@gmail.com · [CV](files/cv.pdf)
 
-## Publicarlo
+---
 
-1. En GitHub, **New repository** → nombre exacto `O-Chavx.github.io`, **Public**, sin README.
-2. En esta carpeta:
-   ```bash
-   git init -b main
-   git add .
-   git commit -m "Primer portafolio"
-   git remote add origin https://github.com/O-Chavx/O-Chavx.github.io.git
-   git push -u origin main
-   ```
-3. **Settings → Pages → Source: Deploy from a branch**, rama `main`, carpeta `/ (root)`.
-4. Esperar el check verde en **Actions** (1 a 2 minutos) y abrir https://o-chavx.github.io
-5. Pegar el link en el issue #203.
-
-## Agregar un proyecto
-
-Copiar un bloque `<article class="card">…</article>` en `index.html`, cambiar título, pregunta, resultado, imagen y links.
-La imagen va en `images/`, exportada en JPG de unos cientos de KB.
+Hecho con HTML y CSS, sin dependencias, publicado con GitHub Pages.
