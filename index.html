@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oscar Chávez Inocente</title>
+<meta name="description" content="Portafolio de Oscar Andrés Chávez Inocente: datos públicos del Perú con Python y agentes de IA.">
+<meta property="og:title" content="Oscar Chávez Inocente · Portafolio">
+<meta property="og:description" content="Pobreza, minería, documentos e incendios en el Perú, contados con datos y código.">
+<meta property="og:image" content="https://o-chavx.github.io/images/mineria.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231f4e79'/><text x='50' y='66' font-size='50' text-anchor='middle' fill='white' font-family='Arial'>OC</text></svg>">
+<style>
+  :root{
+    --bg:#ffffff; --fg:#1c1c1c; --muted:#5b6470; --line:#e5e7eb;
+    --card:#f8fafc; --accent:#1f4e79; --accent-soft:#e8f0f8; --img-bg:#ffffff;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#111418; --fg:#e8eaed; --muted:#a0a8b3; --line:#2a2f36;
+      --card:#181c21; --accent:#7fb2e5; --accent-soft:#1b2a3a; --img-bg:#ffffff;
+    }
+  }
+  *{box-sizing:border-box}
+  [hidden]{display:none !important}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px}
+  nav{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
+  nav .wrap{display:flex;gap:20px;align-items:center;height:52px;overflow-x:auto;white-space:nowrap}
+  nav b{margin-right:auto;color:var(--fg)}
+  nav a{font-size:15px}
+
+  header{display:flex;gap:28px;align-items:center;padding:44px 0 28px}
+  .foto{width:150px;height:150px;border-radius:50%;object-fit:cover;flex:none;background:var(--accent-soft)}
+  .iniciales{width:150px;height:150px;border-radius:50%;flex:none;display:none;
+    align-items:center;justify-content:center;font-size:52px;font-weight:700;
+    background:var(--accent-soft);color:var(--accent)}
+  h1{font-size:34px;line-height:1.15;margin:0 0 8px}
+  .bio{margin:0 0 14px;color:var(--muted);max-width:60ch}
+  .links{display:flex;flex-wrap:wrap;gap:10px}
+  .btn{display:inline-block;padding:7px 14px;border:1px solid var(--line);border-radius:999px;font-size:15px;color:var(--fg)}
+  .btn:hover{border-color:var(--accent);text-decoration:none}
+  .btn.main{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+
+  section{padding:28px 0;border-top:1px solid var(--line)}
+  h2{font-size:24px;margin:0 0 6px}
+  .lead{color:var(--muted);margin:0 0 22px}
+
+  .card{display:grid;grid-template-columns:320px 1fr;gap:24px;padding:18px;margin-bottom:18px;
+    background:var(--card);border:1px solid var(--line);border-radius:14px}
+  .card .img{display:block;aspect-ratio:16/11;border-radius:10px;overflow:hidden;background:var(--img-bg);border:1px solid var(--line)}
+  .card img{width:100%;height:100%;object-fit:contain;display:block}
+  .card img.cover{object-fit:cover;object-position:top}
+  .foto{object-position:center 20%}
+  .tag{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);font-weight:600}
+  .card h3{font-size:20px;line-height:1.3;margin:4px 0 10px}
+  .card p{margin:0 0 8px}
+  .card p b{color:var(--fg)}
+  .card .links{margin-top:12px}
+  .card .btn{font-size:14px;padding:5px 12px}
+
+  .video{display:grid;grid-template-columns:300px 1fr;gap:28px;align-items:start}
+  video{width:100%;aspect-ratio:9/16;border-radius:14px;background:#000;display:block}
+
+  .mas{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .mini{padding:14px 16px;border:1px solid var(--line);border-radius:12px}
+  .mini b{display:block}
+  .mini span{color:var(--muted);font-size:15px}
+
+  footer{padding:28px 0 48px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+
+  @media (max-width:720px){
+    body{font-size:16px}
+    header{flex-direction:column;align-items:flex-start;gap:18px;padding-top:28px}
+    .foto,.iniciales{width:112px;height:112px;font-size:40px}
+    h1{font-size:28px}
+    .card,.video,.mas{grid-template-columns:1fr}
+    .card{padding:14px;gap:14px}
+    .video video{max-width:300px}
+    nav .wrap{gap:16px}
+  }
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <b>Oscar Chávez</b>
+  <a href="#proyectos">Proyectos</a>
+  <a href="#video">Video</a>
+  <a href="#mas">Más</a>
+</div></nav>
+
+<main class="wrap">
+
+  <!-- ===================== INICIO ===================== -->
+  <header>
+    <!-- Pon tu foto en images/foto.jpg. Mientras no exista, se ven tus iniciales. -->
+    <img class="foto" src="images/foto.jpg" alt="Foto de Oscar Chávez"
+         onerror="this.style.display='none';document.getElementById('iniciales').style.display='flex'">
+    <div class="iniciales" id="iniciales" aria-hidden="true">OC</div>
+    <div>
+      <h1>Oscar Andrés Chávez Inocente</h1>
+      <p class="bio">Bachiller en Economía por la PUCP y estudiante de la Diplomatura en Ciencia de Datos para las Ciencias Sociales y la Gestión Pública.
+        Analizo datos públicos del Perú con Python: dashboards, mapas y agentes de IA que responden con la cifra oficial.</p>
+      <div class="links">
+        <a class="btn main" id="btn-cv" href="files/cv.pdf" target="_blank" rel="noopener" hidden>CV en PDF</a>
+        <a class="btn" href="https://github.com/O-Chavx" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" id="btn-linkedin" href="#" target="_blank" rel="noopener" hidden>LinkedIn</a>
+        <a class="btn" id="btn-correo" href="#" hidden>Correo</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== PROYECTOS ===================== -->
+  <section id="proyectos">
+    <h2>Proyectos</h2>
+    <p class="lead">Cada uno con su pregunta, su resultado y el código para repetirlo.</p>
+
+    <article class="card">
+      <a class="img" href="https://o-chavx.github.io/Tarea_3/web/" target="_blank" rel="noopener">
+        <img class="cover" src="images/mineria.jpg" alt="Dashboard con el mapa de pobreza distrital y las unidades mineras" loading="lazy">
+      </a>
+      <div>
+        <div class="tag">Dashboard · D3.js · Reel con IA</div>
+        <h3>Minería y pobreza en los 1,873 distritos del Perú</h3>
+        <p><b>Pregunta:</b> ¿los distritos con minas son menos pobres que el resto, aun dentro del mismo departamento?</p>
+        <p><b>Resultado:</b> son 7.8 puntos menos pobres (26.8 % contra 34.6 %), pero al comparar dentro de cada departamento
+          la brecha baja a 4.4 puntos. Los 8 distritos mineros de Cajamarca promedian 52.9 %.</p>
+        <div class="links">
+          <a class="btn" href="https://o-chavx.github.io/Tarea_3/web/" target="_blank" rel="noopener">Dashboard</a>
+          <a class="btn" href="#video">Reel</a>
+          <a class="btn" href="https://github.com/O-Chavx/Tarea_3" target="_blank" rel="noopener">Código</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <a class="img" href="https://github.com/O-Chavx/Clean_ENAHO/blob/main/mapas/pobreza_departamento.png" target="_blank" rel="noopener">
+        <img src="images/enaho_mapa.jpg" alt="Mapa de pobreza monetaria por departamento, ENAHO 2024" loading="lazy">
+      </a>
+      <div>
+        <div class="tag">Claude Code · Skills · ENAHO</div>
+        <h3>Tres skills que limpian la ENAHO 2024 y mapean la pobreza</h3>
+        <p><b>Pregunta:</b> ¿puede un agente limpiar la ENAHO y replicar la pobreza oficial del INEI?</p>
+        <p><b>Resultado:</b> 27.6 % de pobreza, igual que el INEI, con 108,664 residentes. El mapa une los 25 departamentos
+          por código: Cajamarca 45.0 %, Ica 6.0 %.</p>
+        <div class="links">
+          <a class="btn" href="https://github.com/O-Chavx/Clean_ENAHO" target="_blank" rel="noopener">Código</a>
+          <a class="btn" href="https://github.com/O-Chavx/Clean_ENAHO/blob/main/mapas/pobreza_departamento.png" target="_blank" rel="noopener">Mapa</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <a class="img" href="https://voces-documentos.streamlit.app/" target="_blank" rel="noopener">
+        <img src="images/voces.jpg" alt="Error de OCR por tipo de documento" loading="lazy">
+      </a>
+      <div>
+        <div class="tag">OCR · Whisper · Gemini · Streamlit</div>
+        <h3>Voces y documentos peruanos: del archivo escaneado al texto buscable</h3>
+        <p><b>Pregunta:</b> ¿se pueden convertir documentos escaneados y entrevistas en audio en un archivo buscable?</p>
+        <p><b>Resultado:</b> Whisper transcribe con 17 % de error de palabras y Gemini llenó bien 17 de 20 fichas.
+          Pesa más el tipo de material que el modelo: los manuscritos siguen fallando.</p>
+        <div class="links">
+          <a class="btn" href="https://voces-documentos.streamlit.app/" target="_blank" rel="noopener">Demo</a>
+          <a class="btn" href="https://github.com/O-Chavx/Voces_documentos_peruanos" target="_blank" rel="noopener">Código</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <a class="img" href="https://github.com/O-Chavx/incendio" target="_blank" rel="noopener">
+        <img src="images/incendio.jpg" alt="Imágenes satelitales antes y después del incendio y su índice dNBR" loading="lazy">
+      </a>
+      <div>
+        <div class="tag">Sentinel-2 · Raster · Streamlit</div>
+        <h3>El incendio de Huanoquite: qué se quemó y a quién tocó</h3>
+        <p><b>Pregunta:</b> ¿cuántas hectáreas se quemaron en Paruro (Cusco), qué se quemó y cuánta gente vive cerca?</p>
+        <p><b>Resultado:</b> 442 ha quemadas, el 93 % pastizal de puna, y 1,726 personas a menos de 5 km.
+          El incendio se triplicó en dos días.</p>
+        <div class="links">
+          <a class="btn" href="https://github.com/O-Chavx/incendio" target="_blank" rel="noopener">Código</a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ===================== VIDEO ===================== -->
+  <section id="video">
+    <h2>Video</h2>
+    <div class="video">
+      <video controls playsinline preload="none" poster="images/reel_portada.jpg">
+        <source src="https://o-chavx.github.io/Tarea_3/reel/reel.mp4" type="video/mp4">
+        Tu navegador no puede mostrar el video.
+        <a href="https://o-chavx.github.io/Tarea_3/reel/reel.mp4">Descárgalo aquí</a>.
+      </video>
+      <div>
+        <h3 style="margin-top:0">Reel: ¿las minas reducen la pobreza?</h3>
+        <p>Los tres hallazgos del proyecto de minería en 51 segundos, para LinkedIn. El guion, las imágenes,
+          la música y los subtítulos los armé con Python.</p>
+        <p class="lead"><b>La voz es mía, clonada con IA.</b></p>
+        <div class="links">
+          <a class="btn" href="https://lnkd.in/p/dtGPJvpm" target="_blank" rel="noopener">Verlo en LinkedIn</a>
+          <a class="btn" href="https://github.com/O-Chavx/Tarea_3/tree/main/reel" target="_blank" rel="noopener">Cómo lo hice</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MAS ===================== -->
+  <section id="mas">
+    <h2>Lo que uso</h2>
+    <div class="mas">
+      <div class="mini"><b>Datos</b><span>pandas, GeoPandas, rasterio, microdatos del INEI, API del BCRP</span></div>
+      <div class="mini"><b>Visualización</b><span>matplotlib, D3.js, Streamlit, mapas coropléticos</span></div>
+      <div class="mini"><b>IA</b><span>Claude Code, servidores MCP, skills, Whisper, OCR, Gemini</span></div>
+      <div class="mini"><b>Reproducible</b><span>uv, pytest, GitHub Pages y verificación de cada cifra</span></div>
+    </div>
+  </section>
+
+</main>
+
+<footer><div class="wrap">
+  Oscar Andrés Chávez Inocente · Hecho con HTML y GitHub Pages ·
+  <a href="https://github.com/O-Chavx/O-Chavx.github.io" target="_blank" rel="noopener">código del sitio</a>
+</div></footer>
+
+<script>
+  // ===== Edita aquí tus datos. Si un campo queda vacío, su botón no aparece. =====
+  const PERFIL = {
+    linkedin: "https://www.linkedin.com/in/oscar-ch%C3%A1vez-inocente-98373b23b/",   // ej.: "https://www.linkedin.com/in/tu-usuario/"
+    correo:   "oscar.ac23502@gmail.com"    // ej.: "tu@correo.com"
+  };
+  if (PERFIL.linkedin) { const a = document.getElementById("btn-linkedin"); a.href = PERFIL.linkedin; a.hidden = false; }
+  if (PERFIL.correo)   { const a = document.getElementById("btn-correo"); a.href = "mailto:" + PERFIL.correo; a.hidden = false; }
+  // El botón del CV aparece solo cuando exista files/cv.pdf
+  fetch("files/cv.pdf", { method: "HEAD" })
+    .then(r => { if (r.ok) document.getElementById("btn-cv").hidden = false; })
+    .catch(() => {});
+</script>
+</body>
+</html>
